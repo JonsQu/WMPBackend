@@ -2,10 +2,22 @@
   "name": "wmpbackend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
+    "start": "nodemon server.js --exec babel-node --presets env",
+    "release": "npm run clean && npm run build && npm run serve",
+    "clean": "rm -rf dist && mkdir dist",
+    "build": "babel . -s  -D -d dist  --presets env",
+    "serve": "node dist/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "express-validator": "^5.3.1",
+    "mongodb": "^3.1.10"
+  }
 }
