@@ -7,7 +7,7 @@ router.post('/create', plant_controller.plant_create);
 
 router.get('/:id', plant_controller.plant_details);
 
-router.get('/all', plant_controller.plants);
+router.post('/all', plant_controller.plants_all);
 
 router.post('/search', plant_controller.plant_get_by_name);
 
