@@ -7,6 +7,8 @@ router.post('/create', plant_controller.plant_create);
 
 router.get('/:id', plant_controller.plant_details);
 
+router.get('/plants', plant_controller.plants);
+
 router.post('/search', plant_controller.plant_get_by_name);
 
 router.put('/:id/update', plant_controller.plant_update);
