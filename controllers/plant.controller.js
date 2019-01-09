@@ -34,7 +34,7 @@ exports.plant_get_by_name = function(req, res){
     });
 }
 
-exports.plants = function(req, res){
+exports.plants_all = function(req, res){
     Plant.find({}, function(err, plant, next){
         if(err){
             return next(err);
