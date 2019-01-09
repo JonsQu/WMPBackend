@@ -39,7 +39,7 @@ exports.plants_all = function(req, res){
         if(err){
             return next(err);
         }
-        res.send(plant);
+        res.send(JSON.stringify(plant));
     });
 }
 
