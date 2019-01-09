@@ -34,6 +34,15 @@ exports.plant_get_by_name = function(req, res){
     });
 }
 
+exports.plants = function(req, res){
+    Plant.find({}, function(err, plant, next){
+        if(err){
+            return next(err);
+        }
+        res.send(plant);
+    });
+}
+
 exports.plant_update = function(req, res){
     Plant.findByIdAndUpdate(req.params.id, {$set: req.body}, function(err, plant, next){
         if(err){
