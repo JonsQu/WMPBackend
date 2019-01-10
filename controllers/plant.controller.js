@@ -60,4 +60,12 @@ exports.plant_delete = function(req, res){
         res.send('Deleted successfully!');
     });
 }
+exports.plants_delete_by_name = function(req, res){
+    Plant.findOneAndDelete({plantName: req.body.delete}, function(err, plant, next){
+        if(err){
+            return next(err);
+        }
+        res.send(plant);
+    });
+}
 
