@@ -12,7 +12,7 @@ exports.plant_create = function(req, res, next){
         if(err){
             return next(err);
         }
-        res.send(status(200));
+        res.send('Plant is created');
     });
 }
 
